@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-dark bg-gradient-dark">
+        <div class="container">
+            <div class="navbar-header">
+            @Html.ActionLink("Book Shoppe", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarColor03" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link">@Html.ActionLink("Home", "Index", "Home")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">@Html.ActionLink("About", "About", "Home")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">@Html.ActionLink("Contact", "Contact", "Home")</a>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Book Shoppe</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
