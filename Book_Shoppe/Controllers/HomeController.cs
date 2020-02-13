@@ -3,27 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Book_Shoppe.Data;
+using Book_Shoppe.Repositary;
 
 namespace Book_Shoppe.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Home()
         {
-            return View();
+            IEnumerable<Book> books = BookRepositary.GetAllBooks();
+            return View(books);
         }
 
-        public ActionResult About()
+        public ActionResult Users()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            IEnumerable<User> users = UserRepositary.GetAllUsers();
+            return View(users);
         }
 
-        public ActionResult Contact()
+        public ActionResult Books()
         {
             ViewBag.Message = "Your contact page.";
-
+            return View();
+        }
+        public ActionResult Views()
+        {
+            IEnumerable<Book> booksList = BookRepositary.GetAllBooks();
+            IEnumerable<User> usersList = UserRepositary.GetAllUsers();
+            ViewBag.books = booksList;
+            ViewData["Users"] = usersList;
             return View();
         }
     }
