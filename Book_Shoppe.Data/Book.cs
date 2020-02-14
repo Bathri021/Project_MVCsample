@@ -15,7 +15,6 @@ namespace Book_Shoppe.Data
         public string Genere { get; set; }
         public int Price { get; set; }
         public int NoOfPages { get; set; }
-        public int Discount { get; set; }
 
         //public Book(int userID, string title, string author, string genere, int price, int noOfPages)
         //{
