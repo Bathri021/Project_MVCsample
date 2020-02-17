@@ -1,0 +1,77 @@
+﻿@model Book_Shoppe.Data.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+<br />
+@using (Html.BeginForm("Register", "User", FormMethod.Post))
+{
+    <h4>Create new account</h4>
+
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(m => m.UserID, new { @class = "col-form-label" })
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.UserID, new {id="inputDefault", @class = "form-control", placeholder = "" + (ViewBag.userCount+1) })
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(m => m.Name, new { @class = "col-form-label" })
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", id = "inputDefault" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(m => m.UserName, new { @class = "col-form-label" })
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", id = "inputDefault" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(m => m.MailID, new { @class = "col-form-label" })
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.MailID, new { @class = "form-control", id = "inputDefault" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(m => m.Password, new { @class = "col-form-label" })
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", id = "exampleInputPassword1", type = "password" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(m => m.Role, new { @class = "col-form-label" })
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Role, new { @class = "form-control", id = "inputDefault" })
+        </div>
+        <br />
+       <table>
+           <tr>
+               <td>
+                   <input type="submit" class="btn btn-outline-primary" id="submit" />
+               </td>
+               <td>
+                   @Html.ActionLink("View List","Users",null,new { @class = "btn btn-outline-info" })
+               </td>
+           </tr>
+       </table>
+           
+        
+    </div>
+}
+
+

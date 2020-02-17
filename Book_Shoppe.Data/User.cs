@@ -15,6 +15,10 @@ namespace Book_Shoppe.Data
         public string Password { get; set; }
         public string Role { get; set; }
 
+        public User()
+        {
+
+        }
         // Declare a User Properties
         //public User(string name, string userName, string mailID, string role)
         //{

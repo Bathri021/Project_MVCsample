@@ -17,6 +17,9 @@ namespace Book_Shoppe.Repositary
             bookList.Add(new Book { BookID = 2, Title = "It's Me", Author = "Willam", Genere = "Philasopy", Price = 240 });
             bookList.Add(new Book { BookID = 3, Title = "Please Don't", Author = "Robert", Genere = "Fiction", Price = 400 });
             bookList.Add(new Book { BookID = 4, Title = "Real Lover", Author = "John", Genere = "Story", Price = 730 });
+            bookList.Add(new Book { BookID = 5, Title = "Why it is happend?", Author = "David", Genere = "Story", Price = 840 });
+            bookList.Add(new Book { BookID = 6, Title = "Belives not permanent", Author = "Steve", Genere = "Story", Price = 790 });
+            bookList.Add(new Book { BookID = 7, Title = "Live your present", Author = "Tony", Genere = "Story", Price = 1730 });
         }
         public static void Add(Book book)
         {
