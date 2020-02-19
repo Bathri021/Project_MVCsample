@@ -14,27 +14,21 @@ namespace Book_Shoppe.Controllers
         public ActionResult Index()
         {
             ViewBag.userCount = UserRepositary.getUserCount();
+            ViewBag.Roles = new SelectList(UserRepositary.GetRoles(), "RoleID", "RoleName");
             return View();
         }
 
-        //[HttpGet]
-        //public ActionResult Register()
-        //{
-        //    ViewBag.userCount = UserRepositary.getUserCount();
-        //    return View();
-        //}
+ 
         [HttpPost]
-        public ActionResult Register()
+        public ActionResult Register([Bind(Include ="UserID,Name,UserName,MailID,Password,RoleID")] User user)
         {
-            if (ModelState.IsValid)
-            {
-                User user = new User();
-                //UpdateModel(user);
-                TryUpdateModel(user);
+            if(!ModelState.IsValid){
+                return View("Index", user);
+            }
                 UserRepositary.Add(user);
                 ViewBag.Message = "Registration Successfull";
-            }
-            return RedirectToAction("Index");
+                ViewBag.Roles = new SelectList(UserRepositary.GetRoles(), "RoleID", "RoleName");
+                return RedirectToAction("Index");
         }
 
         public ActionResult Users()

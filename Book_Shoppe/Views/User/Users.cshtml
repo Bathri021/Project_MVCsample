@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Book_Shoppe.Data.User>
 @{
     ViewBag.Title = "Users";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
 }
 
 <h2>Users</h2>
@@ -26,7 +26,7 @@
                     <td> @user.Name</td>
                     <td> @user.UserName</td>
                     <td>@user.MailID</td>
-                    <td>@user.Role</td>
+                    <td>@user.RoleID</td>
                 </tr>
                 i++;
             }

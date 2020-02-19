@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Book_Shoppe.Data;
 namespace Book_Shoppe.Repositary
 {
     public static class UserRepositary
     {
         public static List<User> userList = new List<User>();
+        public static List<RoleViewModel> Role = new List<RoleViewModel>();
 
         static UserRepositary()
         {
             // var user = new User() { Name = "Bathri!",UserName="Bathri",MailID="bathri@gmail.com"};
-            userList.Add(new User {Name="Bathri",UserName= "Bathri",MailID= "bathri@gmail.com",Role= "Admin" });
-            userList.Add(new User {Name= "Vinoth", UserName="Vinoth",MailID="vinoth@gmail.com", Role="Customer" });
-            userList.Add(new User {Name="Ragav", UserName="Ragav",MailID= "ragav@gmail.com",Role= "Seller" });
+            userList.Add(new User {Name="Bathri",UserName= "Bathri",MailID= "bathri@gmail.com",RoleID=  1});
+            userList.Add(new User {Name= "Vinoth", UserName="Vinoth",MailID="vinoth@gmail.com", RoleID=2 });
+            userList.Add(new User {Name="Ragav", UserName="Ragav",MailID= "ragav@gmail.com",RoleID=3 });
+
+            Role.Add(new RoleViewModel { RoleID = 1, RoleName = "Admin" });
+            Role.Add(new RoleViewModel { RoleID = 2, RoleName = "Seller" });
+            Role.Add(new RoleViewModel { RoleID = 3, RoleName="Customer"});
         }
         public static IEnumerable<User> GetAllUsers()
         {
@@ -38,7 +40,12 @@ namespace Book_Shoppe.Repositary
             userValue.UserName = user.UserName;
             userValue.MailID = user.MailID;
             userValue.Password = user.Password;
-            userValue.Role = user.Role;
+            userValue.RoleID = user.RoleID;
+        }
+
+        public static IEnumerable<RoleViewModel> GetRoles()
+        {
+            return Role;
         }
     }
 }

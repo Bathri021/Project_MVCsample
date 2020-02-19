@@ -245,7 +245,7 @@
     <Content Include="Views\Book\Edit.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Users.cshtml" />
-    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Shared\_MasterPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
